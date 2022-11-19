@@ -106,4 +106,4 @@ def test_funcs_dict_list_2(func):
 
 
 if __name__ == '__main__':
-    pytest.main()
+    pytest.main(['test_4_pytest.py'])
