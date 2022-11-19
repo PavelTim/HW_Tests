@@ -1,5 +1,4 @@
 # gitignore для pycharm и VSC
-tests/test_selen_2.py
 selen_example.py
 selen_test.py
 # .idea/ заигнорена последней строчкой файла. ()

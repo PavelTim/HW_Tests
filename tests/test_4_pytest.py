@@ -35,25 +35,6 @@ geo_logs = [
     {'visit10': ['Архангельск', 'Россия']}
 ]
 
-ids = {'user1': [213, 213, 213, 15, 213],
-       'user2': [54, 54, 119, 119, 119],
-       'user3': [213, 98, 98, 35]}
-
-queries = [
-    'смотреть сериалы онлайн',
-    'новости спорта',
-    'афиша кино',
-    'курс доллара',
-    'сериалы этим летом',
-    'курс по питону',
-    'сериалы про спорт',
-    'спорт',
-    'спор',
-    'новости',
-    'ищу плавки с меховым капюшоном',
-    'плыву по реке ищу способ не заржаветь больше чем есть'
-    ]
-
 stats = {'facebook': 55, 'yandex': 120, 'vk': 115, 'google': 99, 'email': 42, 'ok': 98}
 
 list_1 = ['2018-01-01', 'yandex', 'cpc', 100, '2018-01-02', 'yandex', 'cpc', 200, '2018-01-01', 'rambler', 'cpc', 300]
@@ -66,7 +47,6 @@ def test_country(func):
     for item in result:
         assert 'Россия' == list(item.values())[0][1]
 
-
 def test_getorigin():
     ids = {'user1': [213, 213, 213, 15, 213],
            'user2': [54, 54, 119, 119, 119],
@@ -78,13 +58,11 @@ def test_getorigin():
     for item in result:
         assert any(item in v for v in ids.values())
 
-
 def test_scryopt_max():
     yandex = {'facebook': 55, 'yandex': 120, 'vk': 115, 'google': 99, 'email': 42, 'ok': 98}
     assert 'yandex' == scryopt_max(yandex)
     google = {'facebook': 55, 'yandex': 120, 'vk': 115, 'google': 121, 'email': 42, 'ok': 98}
     assert 'google' == scryopt_max(google)
-
 
 @pytest.mark.parametrize("func", funcs_for_tests[2:])
 def test_funcs_dict_list_1(func):
